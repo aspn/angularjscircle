@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hello AngularJS</title>
+    <script src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <h1> Hello AngularJS </h1>
+  <body ng-app="app">
+    <div ng-controller = "MyController">
+      Diameter: <input type="range" ng-model="user.diameter" ng-change="calcStyle(user)" min="1" max="500" />
+      X: <input type="range" ng-model="user.left" ng-change="calcStyle(user)" min="1" max="500" />
+      Y: <input type="range" ng-model="user.top" ng-change="calcStyle(user)" min="1" max="500" />
+      <p>{{user.diameter}}, {{user.left}}, {{user.top}}</p>
+      <p> Style: {{user.style}}</p>
+      <div id="circle" ng-style="style(user)">
+    </div>
+  </body>
+  <script src="js/script.js"></script>
+</html>
